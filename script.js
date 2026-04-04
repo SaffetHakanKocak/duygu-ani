@@ -1,10 +1,10 @@
 const APP_CONFIG = {
   accessPassword: "1904",
-  coupleNames: "[Senin Ismin] + Duygu",
+  coupleNames: "Saffet Hakan + Duygu",
   heroMessage: "Birlikte gecen bir yil, omrumun en guzel hikayesine donustu.",
-  playlistUrl: "https://open.spotify.com/",
+  playlistUrl: "https://open.spotify.com/intl-tr/track/3R2EtXboGshTXOnHHvKaRw?si=39cefeaf66404d96",
   unlockDate: "2026-04-19T00:00:00",
-  signatureName: "[Senin Ismin]",
+  signatureName: "Saffet Hakan",
   letterText:
     "Bugun bizim 1. yildonumumuz. Seninle gecen her gun, hayata daha cok gulumsememe sebep oldu. Her kahkahamiz, her sarilmamiz ve her sessiz animiz icin tesekkur ederim. Iyi ki kalbime dokundun, iyi ki benimlesin.",
 };
