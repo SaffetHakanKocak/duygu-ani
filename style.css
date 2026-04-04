@@ -35,6 +35,18 @@ body.locked {
   overflow: hidden;
 }
 
+.locked-content {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.unlocked-content {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .access-gate {
   position: fixed;
   inset: 0;
@@ -49,6 +61,7 @@ body.locked {
 
 .access-card {
   width: min(540px, 92vw);
+  margin: 0 auto;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(32, 26, 25, 0.1);

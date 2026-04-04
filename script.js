@@ -34,14 +34,24 @@ const ACCESS_STORAGE_KEY = "duygu_ani_unlocked";
 
 function initializeAccessGate() {
   const gate = document.getElementById("accessGate");
+  const appRoot = document.getElementById("appRoot");
   const form = document.getElementById("accessForm");
   const input = document.getElementById("accessInput");
   const error = document.getElementById("accessError");
 
-  const isUnlocked = sessionStorage.getItem(ACCESS_STORAGE_KEY) === "1";
-  if (isUnlocked) {
+  function unlock() {
+    sessionStorage.setItem(ACCESS_STORAGE_KEY, "1");
     gate.classList.add("hidden");
     gate.setAttribute("aria-hidden", "true");
+    appRoot.classList.remove("locked-content");
+    appRoot.classList.add("unlocked-content");
+    appRoot.setAttribute("aria-hidden", "false");
+    document.body.classList.remove("locked");
+  }
+
+  const isUnlocked = sessionStorage.getItem(ACCESS_STORAGE_KEY) === "1";
+  if (isUnlocked) {
+    unlock();
     return;
   }
 
@@ -52,15 +62,16 @@ function initializeAccessGate() {
     event.preventDefault();
     const value = input.value.trim();
     if (value === APP_CONFIG.accessPassword) {
-      sessionStorage.setItem(ACCESS_STORAGE_KEY, "1");
-      gate.classList.add("hidden");
-      gate.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("locked");
+      unlock();
       return;
     }
 
     error.classList.remove("hidden");
     input.select();
+  });
+
+  input.addEventListener("input", () => {
+    error.classList.add("hidden");
   });
 }
 
