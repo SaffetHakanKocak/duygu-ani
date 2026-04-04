@@ -11,6 +11,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="accessGate" class="access-gate" aria-hidden="false">
+    <div class="access-card">
+      <p class="access-eyebrow">Ozel Giris</p>
+      <h2>Bu ani kutusu sadece Duygu icin</h2>
+      <p class="access-text">Devam etmek icin sifreyi gir.</p>
+      <form id="accessForm" class="access-form">
+        <input id="accessInput" type="password" autocomplete="off" placeholder="Sifre" required />
+        <button type="submit" class="btn btn-primary">Ac</button>
+      </form>
+      <p id="accessError" class="access-error hidden">Sifre yanlis. Tekrar dene.</p>
+    </div>
+  </div>
+
   <div class="bg-orb orb-a"></div>
   <div class="bg-orb orb-b"></div>
   <div class="bg-grid"></div>

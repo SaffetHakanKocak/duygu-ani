@@ -31,6 +31,78 @@ body {
   overflow-x: hidden;
 }
 
+body.locked {
+  overflow: hidden;
+}
+
+.access-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: radial-gradient(circle at 20% 15%, rgba(255, 236, 221, 0.95), rgba(255, 236, 221, 0.55) 38%),
+    rgba(24, 15, 14, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.access-card {
+  width: min(540px, 92vw);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(32, 26, 25, 0.1);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.access-eyebrow {
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.75rem;
+  color: var(--brand-dark);
+  font-weight: 700;
+}
+
+.access-card h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.access-text {
+  margin: 0.55rem 0 1rem;
+  color: var(--muted);
+}
+
+.access-form {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.access-form input {
+  flex: 1;
+  border: 1px solid rgba(32, 26, 25, 0.2);
+  border-radius: 999px;
+  padding: 0.72rem 1rem;
+  font: inherit;
+}
+
+.access-form input:focus {
+  outline: 2px solid rgba(47, 127, 127, 0.35);
+  outline-offset: 1px;
+}
+
+.access-form .btn {
+  border: 0;
+  cursor: pointer;
+}
+
+.access-error {
+  margin: 0.7rem 0 0;
+  color: #9b2f2f;
+  font-weight: 600;
+}
+
 .container {
   width: min(1080px, 92vw);
   margin: 0 auto;
@@ -312,6 +384,10 @@ h1 {
 }
 
 @media (max-width: 800px) {
+  .access-form {
+    flex-direction: column;
+  }
+
   .timeline-body {
     grid-template-columns: 1fr;
   }

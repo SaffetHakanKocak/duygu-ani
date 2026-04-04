@@ -1,4 +1,5 @@
 const APP_CONFIG = {
+  accessPassword: "1904",
   coupleNames: "[Senin Ismin] + Duygu",
   heroMessage: "Birlikte gecen bir yil, omrumun en guzel hikayesine donustu.",
   playlistUrl: "https://open.spotify.com/",
@@ -28,6 +29,40 @@ const TIMELINE_ITEMS = [
     image: "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1000&q=80",
   },
 ];
+
+const ACCESS_STORAGE_KEY = "duygu_ani_unlocked";
+
+function initializeAccessGate() {
+  const gate = document.getElementById("accessGate");
+  const form = document.getElementById("accessForm");
+  const input = document.getElementById("accessInput");
+  const error = document.getElementById("accessError");
+
+  const isUnlocked = sessionStorage.getItem(ACCESS_STORAGE_KEY) === "1";
+  if (isUnlocked) {
+    gate.classList.add("hidden");
+    gate.setAttribute("aria-hidden", "true");
+    return;
+  }
+
+  document.body.classList.add("locked");
+  input.focus();
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const value = input.value.trim();
+    if (value === APP_CONFIG.accessPassword) {
+      sessionStorage.setItem(ACCESS_STORAGE_KEY, "1");
+      gate.classList.add("hidden");
+      gate.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("locked");
+      return;
+    }
+
+    error.classList.remove("hidden");
+    input.select();
+  });
+}
 
 const GALLERY_ITEMS = [
   {
@@ -181,6 +216,7 @@ function activateReveal() {
 }
 
 function bootstrap() {
+  initializeAccessGate();
   setStaticContent();
   renderTimeline();
   renderGallery();
