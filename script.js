@@ -41,10 +41,9 @@ function initializeAccessGate() {
 
   function unlock() {
     sessionStorage.setItem(ACCESS_STORAGE_KEY, "1");
-    gate.classList.add("hidden");
+    gate.classList.add("is-hidden");
     gate.setAttribute("aria-hidden", "true");
-    appRoot.classList.remove("locked-content");
-    appRoot.classList.add("unlocked-content");
+    appRoot.classList.remove("is-hidden");
     appRoot.setAttribute("aria-hidden", "false");
     document.body.classList.remove("locked");
   }
@@ -56,6 +55,9 @@ function initializeAccessGate() {
   }
 
   document.body.classList.add("locked");
+  gate.classList.remove("is-hidden");
+  appRoot.classList.add("is-hidden");
+  appRoot.setAttribute("aria-hidden", "true");
   input.focus();
 
   form.addEventListener("submit", (event) => {

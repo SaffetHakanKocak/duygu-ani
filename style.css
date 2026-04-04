@@ -35,16 +35,12 @@ body.locked {
   overflow: hidden;
 }
 
-.locked-content {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
+.is-hidden {
+  display: none !important;
 }
 
-.unlocked-content {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+.app-root {
+  display: block;
 }
 
 .access-gate {
