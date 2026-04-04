@@ -46,6 +46,11 @@ function initializeAccessGate() {
     appRoot.classList.remove("is-hidden");
     appRoot.setAttribute("aria-hidden", "false");
     document.body.classList.remove("locked");
+
+    // If sections were observed while hidden, force them visible after unlock.
+    document.querySelectorAll(".reveal").forEach((element) => {
+      element.classList.add("visible");
+    });
   }
 
   const isUnlocked = sessionStorage.getItem(ACCESS_STORAGE_KEY) === "1";
