@@ -192,6 +192,7 @@ const TIMELINE_ITEMS = [
     title: "Ellerimde Çiçekler",
     text: "Ara tatil bitişi dönüşünü karşılamak için heyecanlı heyecanlı yanına gelirken çekildiğim naçizane bir fotoğraf. Zaman tünelinin bu kısmında kendime yer vereyim dedim ;)",
     image: "media/timeline-14.jpeg",
+    mobileContain: true,
     location: "Simge Çiçekçilik",
     latitude: 40.76581653000908,
     longitude: 29.965748651876297,
@@ -210,6 +211,7 @@ const TIMELINE_ITEMS = [
     title: "Müthiş Konforlu Uyku",
     text: "İstanbul'a gidişimizde oldukça ilginç olan bu uyuma pozisyonunla kameralara yakalandın. Omzumuz boş yere mi duruyor yasla kafayı bak keyfine ehehe.",
     image: "media/timeline-19.jpeg",
+    mobileContain: true,
     location: "İzmit-İstanbul Yolu",
     latitude: 40.7617570050716,
     longitude: 29.86641340952525,
@@ -282,6 +284,7 @@ const TIMELINE_ITEMS = [
     title: "Okul Yemekhanesinde İftar",
     text: "Yine okulda iftar açtığımız günlerden biri. Yüzüğünü göstermiştin. Yemeği çok beğenmiş görünüyorsun ayrıca hfdskfsbdıfb.",
     image: "media/timeline-32.jpeg",
+    mobileContain: true,
     location: "Okul Yemekhanesi",
     latitude: 40.82147043347672,
     longitude: 29.927724353728745,
@@ -606,7 +609,7 @@ function renderTimeline() {
 
   root.innerHTML = TIMELINE_ITEMS.map(
     (item, index) => `
-      <article class="timeline-item reveal ${index % 2 === 0 ? "story-left" : "story-right"}" style="transition-delay:${Math.min(index * 70, 420)}ms;">
+      <article class="timeline-item reveal ${index % 2 === 0 ? "story-left" : "story-right"} ${item.mobileContain ? "mobile-contain" : ""}" style="transition-delay:${Math.min(index * 70, 420)}ms;">
         <div class="timeline-body">
           <img src="${item.image}" alt="${item.title}" loading="lazy" style="object-position: ${item.imagePosition || "center"};" />
           <div class="timeline-content">

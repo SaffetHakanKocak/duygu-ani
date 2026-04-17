@@ -1586,6 +1586,11 @@ body.night-theme .map-memory-date {
     max-height: min(72vw, 380px);
   }
 
+  .timeline-item.mobile-contain .timeline-body img {
+    object-fit: contain;
+    background: rgba(15, 21, 34, 0.06);
+  }
+
   .gallery-item,
   .gallery-item.large {
     grid-column: span 12;
