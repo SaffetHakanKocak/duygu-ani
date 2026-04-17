@@ -131,6 +131,13 @@ body.locked {
   backdrop-filter: blur(8px);
 }
 
+.access-theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 22;
+}
+
 .access-card {
   width: min(540px, 92vw);
   margin: 0 auto;
@@ -139,6 +146,42 @@ body.locked {
   border: 1px solid rgba(32, 26, 25, 0.1);
   box-shadow: var(--shadow);
   padding: 1.5rem;
+}
+
+body.night-theme .access-gate {
+  background: radial-gradient(circle at 20% 15%, rgba(37, 22, 20, 0.72), rgba(18, 17, 26, 0.6) 40%),
+    rgba(5, 8, 14, 0.84);
+}
+
+body.night-theme .access-card {
+  background: linear-gradient(165deg, rgba(16, 22, 34, 0.95), rgba(12, 18, 30, 0.95));
+  border-color: rgba(170, 198, 236, 0.26);
+}
+
+body.night-theme .access-card h2 {
+  color: #f4f7ff;
+}
+
+body.night-theme .access-text {
+  color: #d8e2f3;
+}
+
+body.night-theme .access-form input {
+  color: #f4f7ff;
+  background: rgba(21, 29, 43, 0.92);
+  border-color: rgba(170, 198, 236, 0.3);
+}
+
+body.night-theme .access-form input::placeholder {
+  color: #b7c4d9;
+}
+
+body.night-theme .access-form input:focus {
+  outline-color: rgba(154, 207, 232, 0.55);
+}
+
+body.night-theme .access-error {
+  color: #ffb6b6;
 }
 
 .access-eyebrow {
@@ -1572,6 +1615,11 @@ body.night-theme .map-memory-date {
 
   .access-form {
     flex-direction: column;
+  }
+
+  .access-theme-toggle {
+    top: 0.8rem;
+    right: 0.8rem;
   }
 
   .timeline-body {

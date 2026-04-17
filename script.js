@@ -398,6 +398,26 @@ function applyTheme(theme) {
   localStorage.setItem(THEME_STORAGE_KEY, "day");
 }
 
+function syncThemeToggleLabels() {
+  const label = document.body.classList.contains("night-theme") ? "Gündüz" : "Gece";
+  document.querySelectorAll(".theme-toggle").forEach((toggle) => {
+    toggle.textContent = label;
+  });
+}
+
+function createThemeToggle(extraClass = "") {
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = `btn theme-toggle${extraClass ? ` ${extraClass}` : ""}`;
+  toggle.textContent = document.body.classList.contains("night-theme") ? "Gündüz" : "Gece";
+  toggle.addEventListener("click", () => {
+    const nextTheme = document.body.classList.contains("night-theme") ? "day" : "night";
+    applyTheme(nextTheme);
+    syncThemeToggleLabels();
+  });
+  return toggle;
+}
+
 function initializeThemeToggle() {
   applyTheme(isNightTheme() ? "night" : "day");
 
@@ -406,17 +426,15 @@ function initializeThemeToggle() {
       return;
     }
 
-    const toggle = document.createElement("button");
-    toggle.type = "button";
-    toggle.className = "btn theme-toggle";
-    toggle.textContent = document.body.classList.contains("night-theme") ? "Gündüz" : "Gece";
-    toggle.addEventListener("click", () => {
-      const nextTheme = document.body.classList.contains("night-theme") ? "day" : "night";
-      applyTheme(nextTheme);
-      toggle.textContent = nextTheme === "night" ? "Gündüz" : "Gece";
-    });
-    nav.appendChild(toggle);
+    nav.appendChild(createThemeToggle());
   });
+
+  const accessGate = document.getElementById("accessGate");
+  if (accessGate && !accessGate.querySelector(".access-theme-toggle")) {
+    accessGate.appendChild(createThemeToggle("access-theme-toggle"));
+  }
+
+  syncThemeToggleLabels();
 }
 
 function initializeMobileNavMenu() {
