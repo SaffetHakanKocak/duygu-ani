@@ -10,7 +10,7 @@
   <meta name="description" content="Duygu için hazırlanan 1. yıl anı uygulaması" />
   <script>
     (function () {
-      var version = "20260404-5";
+      var version = "20260406-1";
       var params = new URLSearchParams(window.location.search);
       if (params.get("v") !== version) {
         params.set("v", version);
@@ -21,19 +21,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260404-5" />
+  <link rel="stylesheet" href="style.css?v=20260406-1" />
 </head>
 <body>
   <div id="accessGate" class="access-gate" aria-hidden="false">
     <div class="access-card">
-      <p class="access-eyebrow">Ozel Giris</p>
-      <h2>Bu ani kutusu sadece Duygu icin</h2>
-      <p class="access-text">Devam etmek icin sifreyi gir.</p>
+      <p class="access-eyebrow">Özel Giriş</p>
+      <h2>Bu anı kutusu sadece Duygu için</h2>
+      <p class="access-text">Devam etmek için şifreyi gir.</p>
       <form id="accessForm" class="access-form">
-        <input id="accessInput" type="password" autocomplete="off" placeholder="Sifre" required />
-        <button type="submit" class="btn btn-primary">Ac</button>
+        <input id="accessInput" type="password" autocomplete="off" placeholder="Şifre" required />
+        <button type="submit" class="btn btn-primary">Aç</button>
       </form>
-      <p id="accessError" class="access-error hidden">Sifre yanlis. Tekrar dene.</p>
+      <p id="accessError" class="access-error hidden">Şifre yanlış. Tekrar dene.</p>
     </div>
   </div>
 
@@ -44,57 +44,85 @@
   <div class="bg-grid"></div>
 
   <header class="hero container reveal">
+    <nav class="top-nav">
+      <a class="btn btn-primary" href="index.html">Ana Sayfa</a>
+      <a class="btn btn-ghost" href="timeline.html">Zaman Tüneli</a>
+      <a class="btn btn-ghost" href="map.html">Anı Haritası</a>
+      <a class="btn btn-ghost" href="photos.html">Fotoğraflar</a>
+      <a class="btn btn-ghost" href="videos.html">Epik Videolarımız</a>
+    </nav>
     <p class="eyebrow">19 Nisan - 1. Yılımız</p>
-    <h1 id="coupleNames">Sen + Duygu</h1>
-    <p id="heroMessage" class="hero-text">Bir yılın içindeki en guzel detay: her aninda senin olman.</p>
+    <h1 id="coupleNames">Duygu ve Saffet</h1>
+    <p id="heroMessage" class="hero-text">Bir yılın içindeki en güzel detay: her anında senin olman.</p>
     <div class="hero-actions">
-      <a id="playlistLink" class="btn btn-primary" href="#" target="_blank" rel="noreferrer">Sarkimizi Ac</a>
-      <a class="btn btn-ghost" href="#timeline">Anilara Git</a>
+      <a id="playlistLink" class="btn btn-primary" href="#" target="_blank" rel="noreferrer">Şarkımızı Aç</a>
+      <a class="btn btn-ghost" href="timeline.html">Zaman Tüneline Git</a>
+      <a class="btn btn-ghost" href="map.html">Anı Haritasına Git</a>
+      <a class="btn btn-ghost" href="photos.html">Fotoğraflara Git</a>
+      <a class="btn btn-ghost" href="videos.html">Epik Videolarımız</a>
+    </div>
+    <div id="nowPlaying" class="now-playing hidden" aria-live="polite">
+      <span>Şimdi Çalıyor: Bizim Şarkımız</span>
+      <span class="eq-bars"><i></i><i></i><i></i></span>
     </div>
   </header>
 
   <main class="container">
-    <section id="timeline" class="section reveal">
+    <section class="section reveal">
       <div class="section-head">
-        <h2>Zaman Tuneli</h2>
-        <p>Bizim icin kucuk ama cok ozel anlar.</p>
+        <h2>Katmanlı Gezi</h2>
+        <p>Her bölüm artık kendi sayfasında. İstediğin an geçiş yapabilirsin.</p>
       </div>
-      <div id="timelineList" class="timeline"></div>
-    </section>
-
-    <section id="gallery" class="section reveal">
-      <div class="section-head">
-        <h2>Fotograf Defteri</h2>
-        <p>Her karede ayri bir hikaye.</p>
+      <div class="layer-grid">
+        <a class="layer-card" href="timeline.html">
+          <h3>Zaman Tüneli</h3>
+          <p>Anılarımızın tarih sıralı özeti.</p>
+        </a>
+        <a class="layer-card" href="map.html">
+          <h3>Anı Haritası</h3>
+          <p>Zaman tünelindeki anıları harita üzerinde keşfet.</p>
+        </a>
+        <a class="layer-card" href="photos.html">
+          <h3>Fotoğraflar</h3>
+          <p>En güzel kareleri büyüterek incele.</p>
+        </a>
+        <a class="layer-card" href="videos.html">
+          <h3>Epik Videolarımız</h3>
+          <p>Beraber güldüğümüz videoları tek ekranda izle.</p>
+        </a>
       </div>
-      <div id="galleryGrid" class="gallery-grid"></div>
     </section>
 
     <section id="letter" class="section reveal">
       <div class="section-head">
         <h2>19 Nisan Mektubu</h2>
-        <p>Mektup, geri sayim bitince acilacak.</p>
+        <p>Mektup, geri sayım bitince açılacak.</p>
       </div>
       <div id="letterLock" class="letter-lock">
-        <p class="countdown-label">Mektubun acilmasina kalan:</p>
+        <p class="countdown-label">Mektubun açılmasına kalan:</p>
         <p id="countdown" class="countdown"></p>
+        <div id="letterRitual" class="letter-ritual hidden"></div>
       </div>
       <article id="letterContent" class="letter hidden">
-        <p>Canim Duygu,</p>
+        <p>Canım Duygu,</p>
         <p id="letterText"></p>
         <p class="signature">Sonsuz sevgiyle, <span id="signatureName">Senin Ismin</span></p>
       </article>
     </section>
+
+    <section id="finale" class="section reveal">
+      <div id="finalScene" class="final-scene">
+        <div class="final-stars"></div>
+        <p class="eyebrow">Final Sahnesi</p>
+        <h2>İyi ki varsın Duygu</h2>
+        <p>Bu hikaye burada bitmiyor, sadece bir sonraki güzel ana geçiyor.</p>
+        <button id="replayJourney" class="btn btn-primary" type="button">Bir kez daha yaşayalım</button>
+      </div>
+    </section>
   </main>
 
-  <div id="lightbox" class="lightbox hidden" aria-hidden="true">
-    <button id="lightboxClose" class="lightbox-close" aria-label="Kapat">x</button>
-    <img id="lightboxImage" src="" alt="" />
-    <p id="lightboxCaption"></p>
   </div>
 
-  </div>
-
-  <script src="script.js?v=20260404-5"></script>
+  <script src="script.js?v=20260406-1"></script>
 </body>
 </html>

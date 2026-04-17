@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaman Tüneli | Bizim Hikayemiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260406-1" />
+</head>
+<body>
+  <div id="accessGate" class="access-gate" aria-hidden="false">
+    <div class="access-card">
+      <p class="access-eyebrow">Özel Giriş</p>
+      <h2>Bu anı kutusu sadece Duygu için</h2>
+      <p class="access-text">Devam etmek için şifreyi gir.</p>
+      <form id="accessForm" class="access-form">
+        <input id="accessInput" type="password" autocomplete="off" placeholder="Şifre" required />
+        <button type="submit" class="btn btn-primary">Aç</button>
+      </form>
+      <p id="accessError" class="access-error hidden">Şifre yanlış. Tekrar dene.</p>
+    </div>
+  </div>
+
+  <div id="appRoot" class="app-root is-hidden" aria-hidden="true">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <div class="bg-grid"></div>
+
+    <header class="hero container reveal">
+      <nav class="top-nav">
+        <a class="btn btn-ghost" href="index.html">Ana Sayfa</a>
+        <a class="btn btn-primary" href="timeline.html">Zaman Tüneli</a>
+        <a class="btn btn-ghost" href="map.html">Anı Haritası</a>
+        <a class="btn btn-ghost" href="photos.html">Fotoğraflar</a>
+        <a class="btn btn-ghost" href="videos.html">Epik Videolarımız</a>
+      </nav>
+      <p class="eyebrow">Bizim Hikayemiz</p>
+      <h1 id="coupleNames">Duygu ve Saffet</h1>
+      <p class="hero-text">Anılarımızın kronolojik hali.</p>
+    </header>
+
+    <main class="container">
+      <section id="timeline" class="section reveal">
+        <div class="section-head">
+          <h2>Zaman Tüneli</h2>
+          <p>Bizim için küçük ama çok özel anlar.</p>
+        </div>
+        <div id="timelineList" class="timeline"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js?v=20260406-1"></script>
+</body>
+</html>
