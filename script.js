@@ -1,9 +1,16 @@
 const APP_CONFIG = {
-  accessPassword: "1904",
+  accessPassword: "190425",
   coupleNames: "Duygu ve Saffet",
   heroMessage: "Birlikte geçen bir yıl, ömrümün en güzel hikayesine dönüştü.",
   playlistUrl: "https://open.spotify.com/intl-tr/track/3R2EtXboGshTXOnHHvKaRw?si=39cefeaf66404d96",
-  unlockDate: new Date(Date.now() + 5 * 1000).toISOString(),
+  unlockDate: (() => {
+    const now = new Date();
+    const thisYearUnlock = new Date(now.getFullYear(), 3, 19, 0, 0, 0, 0);
+    const target = now <= thisYearUnlock
+      ? thisYearUnlock
+      : new Date(now.getFullYear() + 1, 3, 19, 0, 0, 0, 0);
+    return target.toISOString();
+  })(),
   signatureName: "Saffet Hakan",
   letterVoiceSrc: "media/mektup_ses.mp4",
   letterText: `Canım Sevgilim Duygu,
