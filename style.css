@@ -252,7 +252,20 @@ body.locked {
   display: flex;
   gap: 0.65rem;
   flex-wrap: wrap;
+  justify-content: flex-end;
   margin-bottom: 1.2rem;
+}
+
+.top-nav a.btn {
+  display: inline-flex;
+}
+
+.top-nav .theme-toggle {
+  margin-left: auto;
+}
+
+.home-page .top-nav a.btn {
+  display: none;
 }
 
 .eyebrow {
@@ -1469,15 +1482,28 @@ body.night-theme .map-memory-date {
   }
 
   .top-nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    justify-content: flex-end;
     gap: 0.55rem;
     width: 100%;
+  }
+
+  .sub-page .top-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
   }
 
   .sub-page .top-nav .btn {
     width: 100%;
     text-align: center;
+  }
+
+  .sub-page .top-nav .theme-toggle {
+    grid-column: 1 / -1;
+    justify-self: end;
+    width: auto;
+    margin-left: 0;
   }
 
   .sub-page .section {
@@ -1534,6 +1560,11 @@ body.night-theme .map-memory-date {
     width: 100%;
   }
 
+  .home-page .top-nav .theme-toggle,
+  .sub-page .top-nav .theme-toggle {
+    width: auto;
+  }
+
   .home-page .hero-hint {
     font-size: 0.9rem;
   }
@@ -1558,8 +1589,13 @@ body.night-theme .map-memory-date {
 }
 
 @media (max-width: 520px) {
-  .top-nav {
+  .sub-page .top-nav {
     grid-template-columns: 1fr;
+  }
+
+  .sub-page .top-nav .theme-toggle {
+    justify-self: stretch;
+    width: 100%;
   }
 
   .hero {
