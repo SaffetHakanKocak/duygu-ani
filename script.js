@@ -409,6 +409,70 @@ function initializeThemeToggle() {
   });
 }
 
+function initializeMobileNavMenu() {
+  if (!document.body.classList.contains("sub-page")) {
+    return;
+  }
+
+  const isMobile = () => window.matchMedia("(max-width: 800px)").matches;
+
+  document.querySelectorAll(".top-nav").forEach((nav) => {
+    if (nav.querySelector(".nav-menu-toggle")) {
+      return;
+    }
+
+    const menuToggle = document.createElement("button");
+    menuToggle.type = "button";
+    menuToggle.className = "btn nav-menu-toggle";
+    menuToggle.setAttribute("aria-label", "Menüyü aç veya kapat");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.innerHTML = "<span></span><span></span><span></span>";
+    nav.prepend(menuToggle);
+
+    function closeMenu() {
+      nav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function toggleMenu() {
+      const nextOpen = !nav.classList.contains("is-open");
+      nav.classList.toggle("is-open", nextOpen);
+      menuToggle.setAttribute("aria-expanded", nextOpen ? "true" : "false");
+    }
+
+    menuToggle.addEventListener("click", () => {
+      if (!isMobile()) {
+        return;
+      }
+      toggleMenu();
+    });
+
+    nav.querySelectorAll("a.btn, .theme-toggle").forEach((item) => {
+      item.addEventListener("click", () => {
+        if (isMobile()) {
+          closeMenu();
+        }
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!isMobile() || !nav.classList.contains("is-open")) {
+        return;
+      }
+
+      if (!nav.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (!isMobile()) {
+        closeMenu();
+      }
+    });
+  });
+}
+
 function showIntroCinematic(onDone) {
   const introKey = `duygu_intro_seen_${window.location.pathname}`;
   if (sessionStorage.getItem(introKey) === "1") {
@@ -650,6 +714,69 @@ function renderVideos() {
       </article>
     `
   ).join("");
+}
+
+function initializeVideoCardPreviews() {
+  const grid = document.getElementById("videoGrid");
+  if (!grid) {
+    return;
+  }
+
+  const videos = grid.querySelectorAll("video");
+  videos.forEach((video) => {
+    video.muted = true;
+    video.preload = "metadata";
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+
+    let posterSet = false;
+
+    function setPosterFromFrame() {
+      if (posterSet || !video.videoWidth || !video.videoHeight) {
+        return;
+      }
+
+      const canvas = document.createElement("canvas");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        return;
+      }
+
+      try {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL("image/jpeg", 0.86);
+        video.setAttribute("poster", dataUrl);
+        posterSet = true;
+        video.classList.remove("video-preview-fallback");
+      } catch {
+        // Canvas capture can fail on unsupported codecs. Keep fallback style.
+      }
+    }
+
+    video.addEventListener("loadedmetadata", () => {
+      const duration = Number.isFinite(video.duration) ? video.duration : 0;
+      const seekTarget = duration > 1 ? Math.min(0.45, duration * 0.14) : 0.1;
+
+      try {
+        video.currentTime = seekTarget;
+      } catch {
+        // Some browsers may block seeking before enough data is available.
+      }
+    }, { once: true });
+
+    video.addEventListener("seeked", () => {
+      setPosterFromFrame();
+      video.pause();
+    }, { once: true });
+
+    // Keep a non-black fallback until the poster is extracted.
+    video.classList.add("video-preview-fallback");
+    video.load();
+  });
 }
 
 function initializeVideoModal() {
@@ -1216,11 +1343,13 @@ function activateReveal() {
 
 function bootstrap() {
   initializeThemeToggle();
+  initializeMobileNavMenu();
   initializeAccessGate();
   setStaticContent();
   renderTimeline();
   renderGallery();
   renderVideos();
+  initializeVideoCardPreviews();
   initializeGalleryWow();
   initializeGalleryTilt();
   initializeVideoModal();
