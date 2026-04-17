@@ -5,56 +5,52 @@ const APP_CONFIG = {
   playlistUrl: "https://open.spotify.com/intl-tr/track/3R2EtXboGshTXOnHHvKaRw?si=39cefeaf66404d96",
   unlockDate: new Date(Date.now() + 5 * 1000).toISOString(),
   signatureName: "Saffet Hakan",
-  letterVoiceSrc: "media/deneme.mp4",
-  letterText:
-    "Bugun kisa bir ses testi yapiyorum. Bu kayit, sesin netligini, arka plan gurultusunu ve konusma hizini kontrol etmek icin hazirlanmistir. Su an normal bir tonda, anlasilir ve dengeli bir sekilde konusmaya calisiyorum. Eger bu kaydi daha sonra dinledigimde kelimeler net duyuluyorsa, mikrofon ayari yeterli demektir.",
-  letterWordTimeline: [
-    { at: 0.00, word: "Bugun" },
-    { at: 0.50, word: "kisa" },
-    { at: 0.83, word: "bir" },
-    { at: 1.18, word: "ses" },
-    { at: 1.58, word: "testi" },
-    { at: 2.16, word: "yapiyorum." },
-    { at: 2.90, word: "Bu" },
-    { at: 3.22, word: "kayit," },
-    { at: 3.80, word: "sesin" },
-    { at: 4.34, word: "netligini," },
-    { at: 5.10, word: "arka" },
-    { at: 5.42, word: "plan" },
-    { at: 5.86, word: "gurultusunu" },
-    { at: 6.52, word: "ve" },
-    { at: 6.82, word: "konusma" },
-    { at: 7.35, word: "hizini" },
-    { at: 7.86, word: "kontrol" },
-    { at: 8.42, word: "etmek" },
-    { at: 8.94, word: "icin" },
-    { at: 9.35, word: "hazirlanmistir." },
-    { at: 10.25, word: "Su" },
-    { at: 10.56, word: "an" },
-    { at: 10.86, word: "normal" },
-    { at: 11.38, word: "bir" },
-    { at: 11.70, word: "tonda," },
-    { at: 12.35, word: "anlasilir" },
-    { at: 12.95, word: "ve" },
-    { at: 13.22, word: "dengeli" },
-    { at: 13.78, word: "bir" },
-    { at: 14.10, word: "sekilde" },
-    { at: 14.64, word: "konusmaya" },
-    { at: 15.24, word: "calisiyorum." },
-    { at: 16.06, word: "Eger" },
-    { at: 16.42, word: "bu" },
-    { at: 16.72, word: "kaydi" },
-    { at: 17.18, word: "daha" },
-    { at: 17.52, word: "sonra" },
-    { at: 17.94, word: "dinledigimde" },
-    { at: 18.66, word: "kelimeler" },
-    { at: 19.28, word: "net" },
-    { at: 19.66, word: "duyuluyorsa," },
-    { at: 20.50, word: "mikrofon" },
-    { at: 21.08, word: "ayari" },
-    { at: 21.56, word: "yeterli" },
-    { at: 22.10, word: "demektir." },
-  ],
+  letterVoiceSrc: "media/mektup_ses.mp4",
+  letterText: `Canım Sevgilim Duygu,
+
+Bugün bizim için sadece bir tarih değil. Bugün, kalbimde kocaman bir yer kaplayan, bana sevgiyi, özlemeyi, değer vermeyi ve birini gerçekten hayatının parçası gibi hissetmeyi öğreten çok özel bir hikâyenin birinci yılı. Bir yıl… Belki dışarıdan bakınca sadece on iki ay gibi görünebilir ama benim için içinde sayısız duygu, anı, gülüş, özlem, heyecan ve sevgi taşıyan koskoca bir ömür gibi.
+
+Seninle geçen bu bir yılın her anını düşündüğümde içimde tarifsiz bir sıcaklık oluşuyor. Hayatıma girdiğin günden beri birçok şey değişti. Bazı günler daha güzel oldu, bazı anlar daha anlamlı hale geldi. En sıradan günler bile senin varlığını hissettiğimde farklılaştı. Çünkü insan gerçekten sevdiği biri hayatındayken zamanı başka yaşıyor. Gün aynı gün, gökyüzü aynı gökyüzü belki ama kalbin başka atıyor. İşte sen benim hayatımda tam olarak böyle bir etki bıraktın.
+
+Seninle ilgili en güzel şeylerden biri, sadece mutlu anlarımda değil, en normal günlerimde bile aklımda olman. Bazen hiçbir sebep yokken seni düşünüyorum. Bir şarkı duyuyorum, aklıma sen geliyorsun. Güzel bir manzara görüyorum, “bunu Duygu da görseydi” diyorum. Gün içinde küçücük bir şey oluyor ve ilk anlatmak istediğim kişi sen oluyorsun. Çünkü sen benim için sadece sevdiğim biri değil, aynı zamanda içimi açabildiğim, heyecanımı paylaşabildiğim, özlediğimde içimin burkulduğu, mutlu olduğumda bunu en çok hak ettiğini düşündüğüm kişisin.
+
+Birlikte geçirdiğimiz zamanları düşündükçe, aslında sevginin büyük laflardan çok küçük detaylarda saklı olduğunu daha iyi anlıyorum. Bir bakışta, bir gülüşte, bir mesajda, bir ses tonunda, bazen birlikte susabilmekte bile ne kadar büyük duygular olduğunu seninle öğrendim. Belki her anımız kusursuz değildi, belki her gün masal gibi geçmedi ama zaten gerçek sevgi biraz da burada başlıyor bence. İki insanın birbirini her haliyle sevebilmesi, özleyebilmesi, önemsemesi ve her şeye rağmen kalbinin yönünü yine birbirine çevirmesi… Benim kalbim bu bir yıl boyunca hep sana döndü.
+
+Senin yanında kendimi bazen çok huzurlu, bazen çok heyecanlı, bazen de çocuk gibi mutlu hissediyorum. Bu çok özel bir şey. Çünkü insan herkesin yanında kendisi gibi olamıyor. Ama ben senin yanında hem içten olabiliyorum hem duygularımı saklama ihtiyacı hissetmiyorum. Seninle konuşurken, gülerken, bir şey paylaşırken içimde “iyi ki” dediğim çok an oldu. Hatta bazen seni düşünürken bile gülümsediğimi fark ediyorum. Çünkü bazı insanlar sadece varlıklarıyla bile insanın ruhuna iyi geliyor. Sen bana tam olarak böyle geliyorsun.
+
+Bir yıl boyunca seninle ilgili biriktirdiğim o kadar çok duygu var ki hangisini kelimelere döksem eksik kalacak gibi hissediyorum. Seni özlemek mesela… Özlemek bile sende başka bir şey. Bazen sadece seni görmek istemek değil, yanında olmak istemek oluyor. Sesini duymak, gözlerine bakmak, gülüşünü görmek, en basit anı bile seninle paylaşmak istemek oluyor. Çünkü sen sıradan biri değilsin benim için. Sen, yokluğunda eksikliği hissedilen, varlığında ise içimi tamamlayan birisin.
+
+Bazen kendi kendime düşünüyorum da, bir insan başka bir insanın hayatında ne kadar güzel bir iz bırakabilir diye… Sonra aklıma sen geliyorsun. Çünkü sen bende güzel bir iz değil, kocaman bir yer bıraktın. Belki farkında bile olmadan bazı yaralarıma iyi geldin, bazı yorgunluklarımı hafiflettin, bazı karışıklıklarımı susturdun. Varlığınla bana iyi geldin. Bazen sadece konuşmanla, bazen sadece dinlemenle, bazen de hiçbir şey yapmadan sadece “orada olmanla.”
+
+Seninle geçen bu bir yılda en çok hissettiğim şeylerden biri şu oldu: Sevgi gerçekten insanı değiştiriyor. Daha ince düşünen, daha çok özleyen, daha çok kıymet bilen biri oldum. Çünkü senin kıymetini hissettim. Herkesin hayatına böyle biri çıkmıyor. Kalbine dokunan, seni heyecanlandıran, seni güldüren, seni düşündüren ve seni olduğun yerden daha güzel bir hale getiren biri… Ben böyle birini bulduğum için kendimi çok şanslı hissediyorum. O kişi sensin Duygu.
+
+Belki sana bunu her zaman tam anlatamıyorum. Bazen duygular insanın içinde o kadar büyüyor ki kelimeler geride kalıyor. Ama şunu bilmeni isterim: Bu bir yıl benim için çok kıymetliydi. Seninle geçen zaman, benim hayatımın en güzel parçalarından biri oldu. Seninle kurduğumuz her cümle, paylaştığımız her an, birlikte güldüğümüz her dakika, hatta seni özleyerek geçirdiğim her gün bile benim için değerli. Çünkü hepsinin merkezinde sen varsın.
+
+Senin gülüşünün içimde bıraktığı etkiyi, sesinin bana verdiği huzuru, bazen küçücük bir cümlenin bile bütün günümü güzelleştirmesini tarif etmek çok zor. Ama gerçek. Ve çok derin. Benim iç dünyamda çok özel bir yerdesin. Öyle geçici, öyle yüzeysel, öyle sıradan bir yer değil. Kalbimin en içinden gelen, en samimi, en saf hislerle sevdiğim bir yerdesin.
+
+Bir yıl boyunca öğrendiğim en güzel şeylerden biri de şu: İnsan sevdiği kişiye sadece bakmaz, onu hisseder. Ben seni bazen uzakta olsan bile hissediyorum. Bazen seni düşünmek bile yetiyor mutlu olmama. Çünkü senin benim hayatımda var olman, başlı başına güzel bir şey. Belki her şeyi mükemmel yapamayız, belki hayat her zaman kolay olmaz ama sevginin gerçekliği bazen tam da bütün bunların içinde daha çok belli olur. Ve ben seni gerçekten, içten, derinden seviyorum.
+
+Bugün, birinci yılımızda sana sadece seni sevdiğimi söylemek istemiyorum. Aynı zamanda bana hissettirdiğin tüm güzellikler için teşekkür etmek istiyorum. Hayatıma kattığın anlam için, kalbimde oluşturduğun o sıcacık yer için, beni bazen bir cümleyle bile mutlu edebildiğin için, varlığınla birçok şeyi daha güzel hale getirdiğin için… teşekkür ederim. İyi ki hayatıma girdin. İyi ki yollarımız kesişti. İyi ki bu bir yılı seninle yaşadım.
+
+Ve şunu da bilmeni isterim… Benim için bir yıl sadece geride kalan bir zaman değil, aynı zamanda daha nice güzel anının başlangıcı gibi. Seninle daha çok gülmek, daha çok anı biriktirmek, daha çok şey paylaşmak, seni daha çok tanımak, daha çok sevmek istiyorum. Çünkü seninle ilgili içimde olan şey geçici bir heves değil; derin, sakin, gerçek ve her geçen gün biraz daha büyüyen bir duygu.
+
+Bazen insan birine bakınca “işte” der ya… İçinde tam açıklayamadığı ama çok güçlü hissettiği bir şey olur. Ben seni düşündüğümde bunu hissediyorum. Kalbimde sana karşı taşıdığım şey çok özel. O yüzden bugün bu mektubu yazarken sadece bir yıl dönümünü kutlamıyorum; aynı zamanda seni sevdiğim için ne kadar mutlu olduğumu da kutluyorum.
+
+Sevgilim,
+Geçen bu bir yıl için, kalbime dokunduğun her an için, bana yaşattığın bütün güzel hisler için sana teşekkür ederim. Sen benim için çok özelsin. Gülüşünle, kalbinle, varlığınla, bende bıraktığın bütün güzel izlerle… çok özelsin. İyi ki varsın. İyi ki benim hayatımdasın. İyi ki bizim bir hikâyemiz var.
+
+Birinci yılımız kutlu olsun aşkım.
+Dilerim bu sadece başlangıç olur ve birlikte daha nice güzel senelerimizin mektuplarını yazarız.
+Seni tarif edemeyeceğim kadar çok,
+anlatamayacağım kadar derin,
+ve her geçen gün biraz daha fazla seviyorum.
+
+İyi ki sen.
+İyi ki biz.
+İyi ki bir yıldır kalbimin en güzel yerindesin.
+
+Seni çok seviyorum.`,
+  letterWordTimeline: [],
 };
 
 const TIMELINE_ITEMS = [
@@ -145,35 +141,35 @@ const TIMELINE_ITEMS = [
     location: "Sütlüce",
     mapX: 33,
     mapY: 47,
-    latitude: 40.82062670589672,
-    longitude: 29.978442483728724,
+    latitude: 40.77412882636713,
+    longitude: 29.98061058530642,
   },
   {
-    date: "Kasım 2025",
+    date: "28 Kasım 2025",
     title: "Her Halin Ayrı Güzel",
-    text: "O gün farklı bir şal denedin, ben ise sana bir kez daha hayran kaldım. Sonra Cajun'da burger yedik ama aklımda en çok kalan yine senin o güzel halindi.",
+    text: "O gün farklı bir şal bağlama modeli denedin, ben ise sana bir kez daha hayran kaldım. Sonra Cajun'da burger yedik ama aklımda en çok kalan yine senin o güzel halindi. İstediğin modeli dene ben her halini çok beğeniyorum 🤍",
     image: "media/timeline-9.jpeg",
-    location: "Cajun Corner İzmit Umuttepe",
-    latitude: 40.8223,
-    longitude: 29.9225,
+    location: "Cajun Corner",
+    latitude: 40.82393248534611,
+    longitude: 29.927149416902836,
   },
   {
-    date: "Kasım 2025",
+    date: "28 Kasım 2025",
     title: "En Sevdiğim Biz",
     text: "Bu fotoğrafa her baktığımda, seni sevmenin içimde bıraktığı o güzel huzuru yeniden hissediyorum. Belki bir kareye sığdık ama benim kalbimde kocaman bir biz olduk.",
     image: "media/timeline-10.jpeg",
     location: "Şerife Gelin KYK Yurdu Önü",
-    latitude: 40.8248,
-    longitude: 29.9219,
+    latitude: 40.82206450807992,
+    longitude: 29.93727579420804,
   },
   {
-    date: "Kasım 2025",
+    date: "19 Aralık 2025",
     title: "Çiçeğim ve Çiçeği",
-    text: "O gün elinde çiçek vardı, benim içimde ise sana karşı daha da büyüyen bir sevgi. Cuma çıkışı başımı vurduğumda o küçücük dokunuşun bile içimi ısıtmıştı; senin şefkatin o günü bana daha da güzel yaptı.",
+    text: "O gün elinde çiçek vardı, benim içimde ise sana karşı daha da büyüyen bir sevgi. Cuma çıkışı başımı vurduğumda o küçücük dokunuşun acısını hemen geçirmişti.",
     image: "media/timeline-11.jpeg",
-    location: "SEKA Park",
-    latitude: 40.7659,
-    longitude: 29.9443,
+    location: "Seka Park",
+    latitude: 40.75909351100365,
+    longitude: 29.909724617376966,
   },
   {
     date: "26 Aralık 2025",
@@ -196,7 +192,7 @@ const TIMELINE_ITEMS = [
   {
     date: "14 Şubat 2026",
     title: "Duygu İnceliyor",
-    text: "Bi anda TCG Gayret'i gezme planı yaptık. Önce denizaltına girdik, içerisi çok dardı ben ilerleyemedim. Duygu beni bıraktı orada yalnız kaldım :( Üzüldüm.. hadnfshfdaf şaka şaka. Bana anlatmak için gitmişti. Sonra çıktı biraz da gemiyi gezdik. Görmüş olduk. Fena değildi.",
+    text: "Bi anda TCG Gayret'i gezme planı yaptık. Önce denizaltına girdik, içerisi çok dardı ben ilerleyemedim. Duygu beni bıraktı orada yalnız kaldım :( Üzüldüm.. hadnfshfdaf şaka şaka. Bana anlatmak için gitmişti. Sonra çıktı biraz da gemiyi gezdik.",
     image: "media/timeline-16.jpeg",
     location: "TCG Gayret Gemi Müzesi",
     latitude: 40.76117665875379,
@@ -205,11 +201,11 @@ const TIMELINE_ITEMS = [
   {
     date: "17 Şubat 2026",
     title: "Müthiş Konforlu Uyku",
-    text: "İstanbul'a gidişimizde oldukça ilginç olan bu uyuma pozisyonunla kameralara yakalandın. Omzumuz boş yere mi duruyor yasla kafayı bak keyfine ehehe",
+    text: "İstanbul'a gidişimizde oldukça ilginç olan bu uyuma pozisyonunla kameralara yakalandın. Omzumuz boş yere mi duruyor yasla kafayı bak keyfine ehehe.",
     image: "media/timeline-19.jpeg",
     location: "İzmit-İstanbul Yolu",
-    latitude: 40.767312117317886,
-    longitude: 29.89415499658413,
+    latitude: 40.7617570050716,
+    longitude: 29.86641340952525,
   },
   {
     date: "17 Şubat 2026",
@@ -250,7 +246,7 @@ const TIMELINE_ITEMS = [
   {
     date: "23 Şubat 2026",
     title: "Üşüdüğüm Gün",
-    text: "Üşümüştüm ve seni buna inandıramamıştım. İçeri geçmek istedim geçmedin fısrnfısrngfı. dışımız üşüse de içimizi ısıtanımız oldukça soğuk vız gelir tırıs gider.",
+    text: "Üşümüştüm ve seni buna inandıramamıştım. İçeri geçmek istedim geçmedin fısrnfısrngfı. Dışımız üşüse de içimizi ısıtanımız oldukça soğuk vız gelir tırıs gider.",
     image: "media/timeline-27.jpeg",
     location: "Boşnak Börekçi",
     latitude: 40.822834181537,
@@ -268,7 +264,7 @@ const TIMELINE_ITEMS = [
   {
     date: "4 Mart 2026",
     title: "Lokma Lokma Lokma Yemek",
-    text: "Kendi hür iradenle \"Saffet, canım bunu çekti alalım mı\" dediğin bir şey olduğu için buna anı tünelimizde yer vermek istedim hfsıfhsdfbds. Tarihe not düşülsün : DUYGUNUN CANI Bİ ŞEY ÇEKTİ!!!",
+    text: "Kendi hür iradenle \"Saffet, canım bunu çekti alalım mı?\" dediğin bir şey olduğu için buna anı tünelimizde yer vermek istedim hfsıfhsdfbds. Tarihe not düşülsün : DUYGUNUN CANI Bİ ŞEY ÇEKTİ!!!",
     image: "media/timeline-31.jpeg",
     location: "İzmit Millet Bahçesi",
     latitude: 40.76164133966338,
@@ -277,7 +273,7 @@ const TIMELINE_ITEMS = [
   {
     date: "6 Mart 2026",
     title: "Okul Yemekhanesinde İftar",
-    text: "Yine okulda iftar açtığımız günlerden biri. Yüzüğünü göstermiştin. Yemeği çok beğenmiş görünüyorsun. Portakal güzeldi.",
+    text: "Yine okulda iftar açtığımız günlerden biri. Yüzüğünü göstermiştin. Yemeği çok beğenmiş görünüyorsun ayrıca hfdskfsbdıfb.",
     image: "media/timeline-32.jpeg",
     location: "Okul Yemekhanesi",
     latitude: 40.82147043347672,
@@ -341,20 +337,36 @@ const GALLERY_ITEMS = [
 
 const VIDEO_ITEMS = [
   {
-    title: "Epik An 1",
-    src: "media/video-1.mp4",
+    title: "Van Gogh Kaydırak",
+    src: "media/kaydırak.mp4",
   },
   {
-    title: "Epik An 2",
-    src: "media/video-2.mp4",
+    title: "Mini Vlog",
+    src: "media/vlog.mp4",
   },
   {
-    title: "Epik An 3",
-    src: "media/video-3.mp4",
+    title: "Salıncak Keyfi",
+    src: "media/salıncak.mp4",
   },
   {
-    title: "Epik An 4",
-    src: "media/video-4.mp4",
+    title: "Origami Günü",
+    src: "media/origami.mp4",
+  },
+  {
+    title: "Çikolatalı Lokma + Spanish Latte",
+    src: "media/lokma.mp4",
+  },
+  {
+    title: "Win11 Kurulum",
+    src: "media/win11kurulum.mp4",
+  },
+  {
+    title: "Kafayı Vurma Hikayesi",
+    src: "media/kafayivurmahikayesi.mp4",
+  },
+  {
+    title: "Etliekmek Tadım",
+    src: "media/etliekmek.mp4",
   },
 ];
 
@@ -801,21 +813,10 @@ function startCountdown() {
     }
 
     const fullText = APP_CONFIG.letterText;
-    letterText.textContent = "";
-
-    function runClassicTypewriter() {
-      let idx = 0;
-      const timer = setInterval(() => {
-        idx += 1;
-        letterText.textContent = fullText.slice(0, idx);
-        if (idx >= fullText.length) {
-          clearInterval(timer);
-        }
-      }, 22);
-    }
+    // Keep the whole letter visible; audio (if provided) plays in the background.
+    letterText.textContent = fullText;
 
     if (!APP_CONFIG.letterVoiceSrc) {
-      runClassicTypewriter();
       return;
     }
 
@@ -823,105 +824,8 @@ function startCountdown() {
     voice.src = APP_CONFIG.letterVoiceSrc;
     voice.preload = "auto";
 
-    let rafId = 0;
-    let finished = false;
-
-    function finishSync() {
-      if (finished) {
-        return;
-      }
-      finished = true;
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-      }
-      letterText.textContent = fullText;
-    }
-
-    function finishSyncWithoutFill() {
-      if (finished) {
-        return;
-      }
-      finished = true;
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-      }
-    }
-
-    function getWordTimelineRevealText(currentTime, duration) {
-      const timeline = APP_CONFIG.letterWordTimeline;
-      if (!Array.isArray(timeline) || timeline.length === 0) {
-        return null;
-      }
-
-      const normalizedTimeline = timeline
-        .filter((item) => item && Number.isFinite(item.at) && typeof item.word === "string")
-        .sort((a, b) => a.at - b.at);
-
-      if (!normalizedTimeline.length) {
-        return null;
-      }
-
-      const lastStamp = normalizedTimeline[normalizedTimeline.length - 1].at;
-      const scale = duration > 0 && lastStamp > 0 ? duration / lastStamp : 1;
-      const scaledTime = currentTime / scale;
-
-      let revealCount = 0;
-      for (let i = 0; i < normalizedTimeline.length; i += 1) {
-        if (normalizedTimeline[i].at <= scaledTime) {
-          revealCount = i + 1;
-        } else {
-          break;
-        }
-      }
-
-      if (revealCount === 0) {
-        return "";
-      }
-
-      return normalizedTimeline
-        .slice(0, revealCount)
-        .map((item) => item.word)
-        .join(" ");
-    }
-
-    function animateByVoice() {
-      if (finished) {
-        return;
-      }
-
-      const duration = Number.isFinite(voice.duration) ? voice.duration : 0;
-      if (duration > 0) {
-        const wordReveal = getWordTimelineRevealText(voice.currentTime, duration);
-        if (wordReveal !== null) {
-          letterText.textContent = wordReveal;
-        } else {
-          const progress = Math.min(voice.currentTime / duration, 1);
-          const charCount = Math.floor(fullText.length * progress);
-          letterText.textContent = fullText.slice(0, charCount);
-        }
-
-        const progress = Math.min(voice.currentTime / duration, 1);
-
-        if (progress >= 1) {
-          finishSync();
-          return;
-        }
-      }
-
-      rafId = requestAnimationFrame(animateByVoice);
-    }
-
-    voice.addEventListener("ended", finishSync, { once: true });
-    voice.addEventListener("error", () => {
-      finishSyncWithoutFill();
-      runClassicTypewriter();
-    }, { once: true });
-
-    voice.play().then(() => {
-      rafId = requestAnimationFrame(animateByVoice);
-    }).catch(() => {
-      finishSyncWithoutFill();
-      runClassicTypewriter();
+    voice.play().catch(() => {
+      // Audio can fail due to browser autoplay policies; keep full text visible.
     });
   }
 
@@ -933,11 +837,41 @@ function startCountdown() {
     ritualReady = true;
     countdownEl.classList.add("hidden");
     ritualEl.classList.remove("hidden");
-    ritualEl.innerHTML = '<button id="breakSeal" class="seal-btn" type="button">Mühürü Kır ve Mektubu Aç</button>';
+    ritualEl.innerHTML = `
+      <div class="seal-ritual-wrap">
+        <button id="breakSeal" class="wax-seal" type="button" aria-label="Mühürü yırt ve mektubu aç">
+          <span class="seal-crack" aria-hidden="true"></span>
+        </button>
+        <p class="seal-instruction">Süre doldu. Mühüre tıkla ve mektubu aç.</p>
+      </div>
+    `;
     const sealBtn = document.getElementById("breakSeal");
-    sealBtn.addEventListener("click", () => {
-      sealBtn.classList.add("breaking");
-      setTimeout(runLetterTypewriter, 520);
+    if (!sealBtn) {
+      return;
+    }
+
+    let isBroken = false;
+    function triggerBreak() {
+      if (isBroken) {
+        return;
+      }
+
+      isBroken = true;
+      sealBtn.style.setProperty("--tear-progress", "1");
+      sealBtn.classList.add("is-tearing");
+      sealBtn.classList.add("is-breaking");
+      setTimeout(runLetterTypewriter, 580);
+    }
+
+    sealBtn.addEventListener("click", triggerBreak);
+
+    sealBtn.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+
+      event.preventDefault();
+      triggerBreak();
     });
   }
 
