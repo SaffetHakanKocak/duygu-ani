@@ -956,7 +956,6 @@ function startCountdown() {
     return;
   }
 
-  const unlockAt = new Date(APP_CONFIG.unlockDate);
   let ritualReady = false;
 
   function runLetterTypewriter() {
@@ -1030,26 +1029,8 @@ function startCountdown() {
     });
   }
 
-  function update() {
-    const now = new Date();
-    const diff = unlockAt.getTime() - now.getTime();
-
-    if (diff <= 0) {
-      showRitual();
-      return;
-    }
-
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
-
-    countdownEl.textContent = `${days} gün ${hours} saat ${minutes} dk ${seconds} sn`;
-  }
-
-  update();
-  setInterval(update, 1000);
+  // Countdown is intentionally disabled; the seal can be opened any time.
+  showRitual();
 }
 
 function initializeNowPlaying() {
